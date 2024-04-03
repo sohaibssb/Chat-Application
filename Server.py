@@ -27,7 +27,7 @@ def receive_message(client_socket):
 
         if not len(message_header):
             return False
-        message_length = int(message_header.decode("utf-8").strip())
+        message_length = int(message_header.decode('utf-8').strip())
         return {"header": message_header, "data": client_socket.recv(message_length)}
 
     except: 
@@ -57,7 +57,7 @@ while True:
                 del clients[notified_socket]
                 continue
             user = clients[notified_socket]
-            print(f"Received Message from {user['data'].decode("utf-8")}: {message['data'].decode('utf-8')}")
+            print(f"Received Message from {user['data'].decode('utf-8')}: {message['data'].decode('utf-8')}")
 
             for client_socket in clients:
                 if client_socket != notified_socket:
@@ -67,5 +67,5 @@ while True:
         sockets_list.remove(notified_socket)
         del clients[notified_socket]
 
-        
+
 
