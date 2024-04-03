@@ -1,2 +1,2 @@
 # Chat-Application
-Creating chatroom server application with sockets
+Creating chatroom server and client application with sockets
